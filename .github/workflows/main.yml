@@ -10,3 +10,21 @@ jobs:
         run: echo "Done - bye Anyangwa!"
       - name: Print say Hello sunshine
         run: echo "How is actions 5!"
+  Second-job:
+    runs-on: self-hosted
+    steps:
+      - name: Print salut
+        run: echo "Hello Manyejoh!"
+      - name: Print good day
+        run: echo "Done - bye Anyangwa!"
+      - name: Print say Hello sunshine
+        run: echo "How is actions 5!"
+  Third-job:
+    runs-on: self-hosted
+    steps:
+       - name: Print salut
+         run: echo "Hello Manyejoh!"
+       - name: Print good day
+         run: echo "Done - bye Anyangwa!"
+       - name: Print say Hello sunshine
+         run: echo "How is actions 5!"
