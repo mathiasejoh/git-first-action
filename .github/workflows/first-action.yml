@@ -1,8 +1,8 @@
 ---
-name: Example 3
+name: My First parallel action
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 jobs:
   build:
     name: Build Docker
