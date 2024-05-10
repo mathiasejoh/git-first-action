@@ -1,12 +1,56 @@
-name: First Workflow
-on: workflow_dispatch
+---
+name: Example 3
+on:
+  push:
+    branches: [ main ]
 jobs:
-  first-job:
-    runs-on: self-hosted
+  build:
+    name: Build Docker
+    runs-on: my-custom-runner
     steps:
-      - name: Print greeting
-        run: echo "Hello World!"
-      - name: Print goodbye
-        run: echo "Done - bye Jonyn!"
-      - name: Print say Hi
-        run: echo "How is actions!"
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Build docker
+      run: |
+        docker build -t test .
+  build-2:
+    name: Build Docker
+    runs-on: my-custom-runner
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Build docker
+      run: |
+        docker build -t test .
+  build-3:
+    name: Build Docker
+    runs-on: my-custom-runner
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Build docker
+      run: |
+        docker build -t test .
+  build-4:
+    name: Build Docker
+    runs-on: my-custom-runner
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Build docker
+      run: |
+        docker build -t test .
+  build-5:
+    name: Build Docker
+    runs-on: my-custom-runner
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Build docker
+      run: |
+        docker build -t test .
