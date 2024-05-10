@@ -1,0 +1,12 @@
+name: Second Workflow
+on: workflow_dispatch
+jobs:
+  first-job:
+    runs-on: self-hosted
+    steps:
+      - name: Print salut
+        run: echo "Hello Manyejoh!"
+      - name: Print good day
+        run: echo "Done - bye Anyangwa!"
+      - name: Print say Hello sunshine
+        run: echo "How is actions 5!"
