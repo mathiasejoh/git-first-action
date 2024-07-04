@@ -1,4 +1,4 @@
-name: Build and Push parallel
+name: Build Push parallel
 on:
   push:
     branches: [ master ]
