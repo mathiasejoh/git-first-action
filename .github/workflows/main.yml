@@ -1,12 +1,10 @@
-name: Second Workflow
-on: workflow_dispatch
+name: Test ARC Action
+on: 
+  workflow_dispatch
 jobs:
-  first-job:
-    runs-on: self-hosted
-    steps:
-      - name: Print salut
-        run: echo "Hello Manyejoh!"
-      - name: Print good day
-        run: echo "Done - bye Anyangwa!"
-      - name: Print say Hello sunshine
-        run: echo "How is actions 5!"
+  fExplore-Githup-Actions:
+     runs-on: git-first-action
+     container: debian:stable-slim
+     steps:
+     - run: echo "Hello Manyejoh, fun using scaleset"
+     
