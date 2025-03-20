@@ -2,8 +2,8 @@ name: Test ARC Action
 on: 
   workflow_dispatch
 jobs:
-  fExplore-Githup-Actions:
-     runs-on: git-first-action
+   Explore-Githup-Actions:
+     runs-on: ghr-runner-set
      container: debian:stable-slim
      steps:
      - run: echo "Hello Manyejoh, fun using scaleset"
