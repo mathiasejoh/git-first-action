@@ -1,4 +1,4 @@
-name: Kubernetes Arc Job
+name: Kubernetes Arc with Docker-in-Docker
 
 on:
   push:
@@ -9,14 +9,26 @@ jobs:
   build-and-run:
     runs-on: ghr-runner-set
     container:
-      image: ubuntu:latest
+      image: docker:24-dind  # Using Docker-in-Docker (DinD) image
+      options: --privileged  # Required for DinD
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Install Dependencies
+      - name: Start Docker Daemon
         run: |
-          apt-get update && apt-get install -y curl
+          dockerd-entrypoint.sh --debug &  # Start Docker in background
+          sleep 5  # Give it some time to initialize
 
-      - name: Run Sample Command
-        run: echo "Hello from Kubernetes Arc!"
+      - name: Verify Docker
+        run: docker version
+
+      - name: Build Docker Image
+        run: |
+          docker build -t my-sample-app .
+      
+      - name: Run Container
+        run: |
+          docker run --rm my-sample-app
+
